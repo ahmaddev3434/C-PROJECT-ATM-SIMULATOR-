@@ -1,0 +1,79 @@
+#include <stdio.h>
+int main () {
+    int c1;
+    int c2;
+    int number;
+    int pin;
+    int number1;
+    int pin1;
+    int login;
+    int mainmenu;
+    int c3;
+    int balance = 5000;
+    int deposit;
+    int withdraw;
+    printf("1 : Create A Account \n");
+    printf("2 : Login To Account \n");
+    printf("Enter Your Choice : ");
+    scanf("%d",&c1);
+    if(c1==1) {
+        printf("Enter Your Number : \n");
+        scanf("%d",&number);
+        printf("Create a Pin : \n");
+        scanf("%d",&pin);
+        printf("Congratulation Your Account Has Been Created \n");
+        printf("Click 1 to Go to Login And 0 to exit : \n");
+        scanf("%d",&c2);
+        if(c2==1) {
+            printf("Enter Your Number :  \n");
+            scanf("%d",&number1);
+            printf("Enter Your Pin :  \n");
+            scanf("%d",&pin1);
+            printf("Press 1 To Enter Login \n");
+            scanf("%d",&login);
+            if(login==1) {
+                printf("Plz Wait we are logging you in \n");
+                if(number==number1 && pin==pin1) {
+                    printf("Login Succesfull \n");
+                    printf("Press 1 to go to main menu \n");
+                    scanf("%d",&mainmenu);
+                } else {
+                    printf("Number and Pin Dont Match Plz check again \n");
+                }
+                  if(number==number1 && pin==pin1 && mainmenu==1) {
+                      while(1) {
+printf("<<<<<<<<<<<<<<<<<<<<<<<<< Welcome to Super Atm >>>>>>>>>>>>>>>>>>>>>>>>> \n");
+                          printf("1. Check Balance \n");
+                          printf("2. Deposit Money \n");
+                          printf("3. Withdrawl Money \n");
+                          printf("4. Exit Atm \n");
+                          printf("Enter Your Choice \n");
+                          scanf("%d",&c3);
+                          if(c3==1) {
+                              printf("Your Balance is %d \n",balance);
+                          } else if(c3==2) {
+                        printf("Enter The Amount You Want To Deposit :  \n");
+                        scanf("%d",&deposit);
+                        printf("%d Is Deposited To Your Account \n",deposit);
+                        balance = balance + deposit;
+                          } else if(c3==3) {
+                              printf("Enter The Amount You Want To Withdraw :  \n");
+                              scanf("%d", &withdraw);
+                        if(withdraw > balance) {
+                              printf("Not Enough Balance To Withdraw \n");
+                          } else {
+                        printf("%d has been withdrwal From Your Account \n",withdraw);
+                        balance = balance - withdraw ;
+                          }
+                          } else if(c3==4) {
+                              printf("Thank you for using Super ATM. Goodbye \n");
+                              break;
+                          }
+                          
+                      }
+                  }            
+            }
+        }
+    }
+    return 0;
+}
